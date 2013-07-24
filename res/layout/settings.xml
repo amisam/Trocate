@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/test7"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/searchFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:text="@string/searchFilter"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/numOfBinsTxtField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchFilter"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:hint="@string/filterBinPrompt"
+        >
+
+        <requestFocus />
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/radioBinTypeGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/numOfBinsTxtField"
+        android:textColor="@color/white"
+        android:layout_below="@+id/numOfBinsTxtField"
+        >
+
+
+        <RadioButton
+            android:id="@+id/binTypeRadio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:text="@string/allBins"/>
+
+        <RadioButton
+            android:id="@+id/binTypeRadio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/generalWaste"/>
+
+        <RadioButton
+            android:id="@+id/binTypeRadio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/recycling"/>
+
+        <RadioButton
+            android:id="@+id/binTypeRadio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/skipBin"/>
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/addBinSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/addBinTxt"/>
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:padding="0sp"
+        android:onClick="backToMainPage"
+        />
+
+    <TextView
+        android:id="@+id/addBinTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/radioBinTypeGroup"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:text="@string/addBinTxt"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/addBinBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/applyBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/addBinSpinner"
+        android:onClick="addBinClick"
+        android:padding="0sp"
+        />
+
+    <ImageButton
+        android:id="@+id/reportBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addBinBtn"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/selectedBinTxt"
+        android:onClick="reportBinClick"
+        android:padding="0sp"
+        />
+
+    <TextView
+        android:id="@+id/reportBinTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addBinBtn"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:text="@string/reportBinTxt"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+     <TextView
+        android:id="@+id/selectedBinTxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/reportBinTxt"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <Spinner
+        android:id="@+id/reportBinSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/numOfBins"
+        android:layout_below="@+id/selectedBinTxt"/>
+
+
+    <EditText
+        android:id="@+id/otherComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/backBtn"
+        android:layout_below="@+id/reportBinSpinner"
+        android:shadowRadius="10"
+        android:textColor="@color/white"
+        android:hint="@string/otherComments"
+        android:ems="10"/>
+
+    <ImageButton
+        android:id="@+id/applyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/searchFilter"
+        android:onClick="applyBinClick"
+        android:padding="0sp" />
+
+</RelativeLayout>
